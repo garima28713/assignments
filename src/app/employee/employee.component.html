@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employeeData">
+    <tr *ngFor="let employee of employeeData" hilightBg>
       <td>
         <span *ngIf="showEdit">{{ employee.employeeID }}</span>
         <input type="text" [(ngModel)]="employee.employeeID" *ngIf="!showEdit">
