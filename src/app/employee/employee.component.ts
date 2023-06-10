@@ -13,10 +13,9 @@ export class EmployeeComponent {
       employeeID: 1,
       firstName: 'Garima',
       lastName: 'Sharma',
-      salary: '50000',
-      dob: '28-11-1996',
-      email: 'garimaa.sharma@tcs.com',
-      action: true,
+      salary: 50000,
+      dob: new Date('11/28/1996'),
+      email: 'garimaa.sharma@tcs.com'
     },
   ];
 
