@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { FormsModule } from '@angular/forms';
 import { ColorDirective } from './color.directive';
+import { NewemployeeComponent } from './newemployee/newemployee.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    ColorDirective
+    ColorDirective,
+    NewemployeeComponent
   ],
   imports: [
     BrowserModule,
