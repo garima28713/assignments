@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
+import { Employee2 } from './interfaces/employee2.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeServiceService {
+  private baseUrl = 'https://dummy.restapiexample.com/api/v1/employees';
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) {}
 
-  getEmployees(){
-    return [{
-      id:1,
-      employee_name:'garima',
-      employee_age:'22',
-      employee_salary:100000,
-      profile_image: null
-    }]
+  getEmployees(): Observable<Employee2[]> {
+    return this.httpClient.get<Employee2[]>(this.baseUrl).pipe(
+      catchError((err: HttpErrorResponse) =>this.handleError(err))
+    );
+  }
+
+  handleError(err: HttpErrorResponse){
+    return throwError(err.message);
   }
 }
